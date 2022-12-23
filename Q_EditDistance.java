@@ -21,6 +21,7 @@ public class Q_EditDistance {
                         dp[i][j] = dp[i-1][j-1];
                     }
                     else{
+                        int add = dp[i][j-1];
                         int delete = dp[i-1][j]+1;
                         int replace = dp[i-1][j-1] +1;
                         dp[i][j] = Math.min(add,Math.min(delete,replace));
